@@ -8,9 +8,13 @@ SRC = ./src
 all: map test
 
 map: $(SRC)/map.c $(SRC)/map.h
-	$(CC) $(CFLAG) $< -c
+	@ $(CC) $(CFLAG) $< -c
 
 test: $(SRC)/test.c
 	@ \
 		$(CC) $(CFLAG) $(OBJ) $< -o $@; \
 		./test
+
+clean: 
+	@- rm $(OBJ)
+	@- rm test

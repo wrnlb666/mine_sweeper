@@ -27,10 +27,10 @@ typedef enum: int8 {
 
 #define map_arr2map(type, map, arr, col) type (*map)[col] = (type (*)[col])arr;
 
-extern inline map_t*    map_init(int32 row, int32 col, int32 mine);
-extern inline void      map_deinit(map_t* map);
-extern inline void      map_print(const map_t* map);
-extern inline int8      map_get_xy(const map_t* map, int32 row, int32 col);
+extern map_t*   map_init(int32 row, int32 col, int32 mine);
+extern void     map_deinit(map_t* map);
+extern void     map_print(const map_t* map);
+extern int8     map_get_xy(const map_t* map, int32 row, int32 col);
 
 
 #endif  // __MAP_H__

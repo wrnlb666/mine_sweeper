@@ -1,7 +1,7 @@
 #include "map.h"
 
 
-map_t* map_init(int32 row, int32 col, int32 mine) {
+inline map_t* map_init(int32 row, int32 col, int32 mine) {
     // get count
     int count = row * col;
 
@@ -73,11 +73,11 @@ map_t* map_init(int32 row, int32 col, int32 mine) {
     return res;
 }
 
-void map_deinit(map_t* map) {
+inline void map_deinit(map_t* map) {
     free(map);
 }
 
-void map_print(const map_t* map) {
+inline void map_print(const map_t* map) {
     map_arr2map(int8, tmp, map->map, map->col);
     for (int32 i = 0; i < map->row; i++) {
         for (int32 j = 0; j < map->col; j++) {
@@ -87,6 +87,6 @@ void map_print(const map_t* map) {
     }
 }
 
-int8 map_get_xy(const map_t* map, int32 row, int32 col) {
+inline int8 map_get_xy(const map_t* map, int32 row, int32 col) {
     return map->map[map->row * row + col];
 }
